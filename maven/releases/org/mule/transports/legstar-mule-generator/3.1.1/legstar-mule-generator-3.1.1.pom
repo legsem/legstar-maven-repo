@@ -1,0 +1,144 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.mule.transports</groupId>
+        <artifactId>mule-transport-legstar-pom</artifactId>
+        <version>3.1.1</version>
+        <relativePath>..</relativePath>
+    </parent>
+
+    <artifactId>legstar-mule-generator</artifactId>
+
+    <name>LegStar for Mule Generator</name>
+    <description>Generates adapters and proxies for inbound and outbound mainframe integration with Mule</description>
+    <url>http://www.mulesource.org/display/LEGSTAR/Home</url>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>ant</groupId>
+            <artifactId>ant</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.ant</groupId>
+            <artifactId>ant-launcher</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.legsem.legstar</groupId>
+            <artifactId>legstar-cixsgen-model</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.legsem.legstar</groupId>
+            <artifactId>legstar-jaxws-generator</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.legsem.legstar</groupId>
+            <artifactId>legstar-coxbapi</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.legsem.legstar</groupId>
+            <artifactId>legstar-coxbrt</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.legsem.legstar</groupId>
+            <artifactId>legstar-coxbgen</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.legsem.legstar</groupId>
+            <artifactId>legstar-codegen</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.legsem.legstar</groupId>
+            <artifactId>legstar-coxbgen</artifactId>
+            <type>test-jar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>com.legsem.legstar</groupId>
+            <artifactId>legstar-jaxbgen</artifactId>
+            <type>test-jar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>com.legsem.legstar</groupId>
+            <artifactId>legstar-cixsgen-model</artifactId>
+            <type>test-jar</type>
+        </dependency>
+
+    </dependencies>
+  
+    <reporting>
+        <plugins>
+
+            <!-- Allows other reports to link to source -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jxr-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>taglist-maven-plugin</artifactId>
+                <configuration>
+                    <tags>
+                        <tag>TODO</tag>
+                        <tag>@todo</tag>
+                        <tag>FIXME</tag>
+                        <tag>@fixme</tag>
+                        <tag>@deprecated</tag>
+                    </tags>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <configuration>
+                    <targetJdk>1.5</targetJdk>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+                <version>2.4</version> 
+                <configuration>
+                    <instrumentation>
+                        <excludes>
+                            <exclude>com/example/**/*Test.class</exclude>
+                        </excludes>
+                    </instrumentation>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jdepend-maven-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>findbugs-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </reporting>
+
+</project>
